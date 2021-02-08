@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  resources :reviews
   root "movies#index"
+
+  resources :users
+
   resources:movies do
     resources:reviews
   end
+  
+  get "signup" => "users#new"
 end
