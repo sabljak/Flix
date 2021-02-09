@@ -1,9 +1,6 @@
 <%= form_with(model: [obj[:movie], obj[:review]], local: true) do |f| %>
   <%= render "shared/errors", object: obj[:review] %>
-
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
+  
   <%= f.label :stars %>
   <% Review::STARS.each do |star| %>    
     <span class="star">
