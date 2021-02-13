@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2021_02_13_174838) do
     t.string "director"
     t.string "duration"
     t.string "image_file_name", default: "placeholder.png"
+    t.integer "reviews_count"
   end
 
   create_table "reviews", force: :cascade do |t|
