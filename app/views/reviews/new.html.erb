@@ -1,2 +1,2 @@
 <h1>New Review for <%= link_to @movie.title, @movie %></h1>
-<%= render "reviews/review_form", :obj => {movie: @movie, review: @movie.reviews.new}%>
+<%= render "reviews/review_form", movie: @movie, review: Review.new %>

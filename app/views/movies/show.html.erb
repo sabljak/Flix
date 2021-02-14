@@ -51,6 +51,8 @@
     <% end %>
   </aside>
 </section>
+<h1>Quick review for <%= @movie.title %></h1>
+<%= render "reviews/review_form", movie: @movie, review: Review.new%>
 
 <% if current_user_admin? %>
   <section class="admin">
