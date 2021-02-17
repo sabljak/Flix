@@ -1,4 +1,4 @@
-<%= form_with(model: [movie, review], local: true) do |f| %>
+<%= form_with(model: [movie, review], remote: true, :html =>  {:id => 'review-form'}) do |f| %>
   <%= render "shared/errors", object: review %>
   
   <%= f.label :stars %>
