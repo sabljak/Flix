@@ -7,7 +7,6 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @review = @movie.reviews.new
   end
 
   def create
@@ -16,8 +15,6 @@ class ReviewsController < ApplicationController
 
     if @review.save
       flash.now[:notice] = 'Review successfully created!'
-    else
-      render :new
     end
   end
 

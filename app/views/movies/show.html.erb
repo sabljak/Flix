@@ -36,7 +36,7 @@
         <td><%= total_gross(@movie) %></td>
       </tr>
     </table>
-    <%= link_to "Write review", new_movie_review_path(@movie), class: "review" %>
+    <%= link_to "Write review", new_movie_review_path(@movie), remote: true, class: "review" %>
   </div>
   <aside>
     <% if @fans.present? %>
@@ -51,13 +51,11 @@
     <% end %>
   </aside>
 </section>
-<h1>Quick review for <%= @movie.title %></h1>
-<%= render "reviews/review_form", movie: @movie, review: Review.new%>
-
+<div id="review-container">
+</div>
 <% if current_user_admin? %>
   <section class="admin">
     <%= link_to "Edit", edit_movie_path(@movie), class: "button" %>
     <%= link_to "Delete", movie_path(@movie), class: "button", method: :delete, data: { confirm: "Are you sure?" } %>
+  </section>
 <% end %>
-
-</section>
