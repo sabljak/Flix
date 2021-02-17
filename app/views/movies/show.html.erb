@@ -17,7 +17,7 @@
     </h2>
     <div class="reviews">
       <%= render 'shared/stars', percent: @movie.average_stars_as_percent %>
-      <%= link_to review_count(@movie), movie_reviews_path(@movie) %>
+      <%= link_to review_count(@movie), movie_reviews_path(@movie), id: "review-count" %>
     </div>
     <p>
       <%= @movie.description %>
