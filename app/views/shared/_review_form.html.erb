@@ -2,7 +2,7 @@
   <%= render "shared/errors", object: review %>
   
   <%= f.label :stars %>
-  <% Review::STARS.each do |star| %>    
+  <% Review::STARS.each do |star| %>
     <span class="star">
     <%= f.radio_button :stars, star %>
     <%= label_tag star %>
