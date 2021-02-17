@@ -6,9 +6,6 @@ class ReviewsController < ApplicationController
     @review = @movie.reviews
   end
 
-  def new
-  end
-
   def create
     @review = @movie.reviews.new(review_params)
     @review.user = current_user
