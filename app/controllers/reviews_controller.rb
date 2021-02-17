@@ -15,8 +15,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
     if @review.save
-      redirect_to movie_reviews_path(@movie),
-                  notice: "Thanks for your review!"
+      flash.now[:notice] = 'Review successfully created!'
     else
       render :new
     end
