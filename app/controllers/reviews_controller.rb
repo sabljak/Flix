@@ -3,7 +3,6 @@ class ReviewsController < ApplicationController
   before_action :set_movie
 
   def index
-    @review = @movie.reviews
   end
 
   def create
