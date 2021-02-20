@@ -1,4 +1,4 @@
-<% if @movie.reviews.size > 0 %>
+<% if @movie.reviews.any? %>
   <h1>Reviews for <%= @movie.title %> </h1>
   <ul class="reviews">
     <% @movie.reviews.each do |review| %>

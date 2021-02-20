@@ -55,7 +55,7 @@
   <div id="review-form-container"></div>
 </div>
 <div id="reviews">
-  <%= render partial: 'shared/reviews', movie: @movie %>
+  <%= render partial: 'reviews/reviews', movie: @movie %>
 </div>
 <% if current_user_admin? %>
   <section class="admin">
