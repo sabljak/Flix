@@ -7,12 +7,6 @@ class ApplicationController < ActionController::Base
     Current.user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def current_user?(user)
-    Current.user == user
-  end
-
-  helper_method :current_user?
-
   def current_user_admin?
     Current.user && Current.user.admin?
   end
