@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
 
   def create
     @review = @movie.reviews.new(review_params)
-    @review.user = Current.user
 
     if @review.save
       flash.now[:notice] = 'Review successfully created!'
