@@ -1,8 +1,9 @@
 class FavoritesController < ApplicationController
   before_action :require_signin
   before_action :set_movie
+
   def create
-    @movie.fans << Current.user
+    Current.user.favorite_movies << @movie
 
     redirect_to @movie
   end
@@ -13,7 +14,9 @@ class FavoritesController < ApplicationController
 
     redirect_to @movie
   end
+
   private
+
   def set_movie
     @movie = Movie.find(params[:movie_id])
   end
