@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Flix</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Flix</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-  
-  <%= render "layouts/header" %>
+<body>
 
-  <div class="content">
+<%= render "layouts/header" %>
+
+<div class="content">
   <div id="flash-id">
     <%= render "layouts/flash" %>
   </div>
-   <%= yield %>
-  </div>
+  <%= yield %>
+</div>
 
-  <%= render "layouts/footer" %>
-  
+<%= render "layouts/footer" %>
 
-  </body>
+
+</body>
 </html>

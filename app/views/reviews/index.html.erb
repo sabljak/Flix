@@ -2,7 +2,7 @@
 <ul class="reviews">
   <% @review.each do |review| %>
     <li>
-     <%= render "shared/stars", percent: review.stars_as_percent %>
+      <%= render "shared/stars", percent: review.stars_as_percent %>
       <p>
         <%= link_to review.user.name, review.user %>
         <span class="date">
@@ -12,8 +12,8 @@
       <p>
         <%= review.comment %>
       </p>
-    <%= link_to "Edit review", edit_movie_review_path(@movie,review), class:"button" %>
-    <%= link_to "Delete review", movie_review_path(@movie,review), method: :delete, class:"button" %>
+      <%= link_to "Edit review", edit_movie_review_path(@movie, review), class: "button" %>
+      <%= link_to "Delete review", movie_review_path(@movie, review), method: :delete, class: "button" %>
     </li>
 
   <% end %>
