@@ -16,7 +16,7 @@
       <%= year_of(@movie) %> &bull; <%= @movie.rating %>
     </h2>
     <div id="review-stars" class="reviews">
-      <%= render partial: 'shared/review_stars', movie: @movie %>
+      <%= render partial: 'reviews/stars', movie: @movie %>
     </div>
     <p>
       <%= @movie.description %>
