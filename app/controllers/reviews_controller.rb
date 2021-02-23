@@ -1,9 +1,6 @@
 class ReviewsController < ApplicationController
+  include MovieScoped
   before_action :require_signin
-  before_action :set_movie
-
-  def index
-  end
 
   def create
     @review = @movie.reviews.new(review_params)
@@ -34,10 +31,6 @@ class ReviewsController < ApplicationController
   end
 
   private
-
-  def set_movie
-    @movie = Movie.find(params[:movie_id])
-  end
 
   def review_params
     params.require(:review).permit(:stars, :comment)

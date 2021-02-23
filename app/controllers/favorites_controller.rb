@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
+  include MovieScoped
   before_action :require_signin
-  before_action :set_movie
 
   def create
     Current.user.favorite_movies << @movie
@@ -13,11 +13,5 @@ class FavoritesController < ApplicationController
     favorite.destroy
 
     redirect_to @movie
-  end
-
-  private
-
-  def set_movie
-    @movie = Movie.find(params[:movie_id])
   end
 end
