@@ -1,17 +1,17 @@
 <h1>Log In</h1>
-<p>No account yet? 
-    <%= link_to "Sign up", signup_path, class:"button" %>
+<p>No account yet?
+  <%= link_to "Sign up", signup_path, class: "button" %>
 </p>
-<%= form_with(url: session_path, local:true) do |f| %>
+<%= form_with(url: session_path, local: true) do |f| %>
 
-    <%= f.label :email_or_username %>
-    <%= f.text_field :email_or_username, required: true, autofocus: true %>
+  <%= f.label :email_or_username %>
+  <%= f.text_field :email_or_username, required: true, autofocus: true %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password, required: true%>
+  <%= f.label :password %>
+  <%= f.password_field :password, required: true %>
 
 
-    <%= f.submit "Log In" %>
+  <%= f.submit "Log In" %>
 <% end %>
 
 
