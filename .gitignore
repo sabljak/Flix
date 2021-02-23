@@ -386,4 +386,6 @@ modules.xml
 !.vscode/extensions.json
 *.code-workspace
 
+.DS_Store
+
 # End of https://www.toptal.com/developers/gitignore/api/vscode,rubymine+all,ruby,rubymine+iml,rubymine,rails
