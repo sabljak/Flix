@@ -56,6 +56,6 @@ class UsersController < ApplicationController
 
   def require_correct_user
     @user = User.find(params[:id])
-    redirect_to movies_url unless current_user?(@user)
+    redirect_to movies_url unless Current.user == @user
   end
 end

@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :movie, counter_cache: true
-  belongs_to :user
+  belongs_to :user, default: -> { Current.user }
 
   STARS = [1, 2, 3, 4, 5]
   validates :comment, length: { minimum: 4 }
