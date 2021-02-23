@@ -1,9 +1,8 @@
 <% if @review.valid? %>
-    document.querySelector('#review-form-container').innerHTML = ""
-    document.querySelector('#form-error').innerHTML = ""
+    document.querySelector('#review-container').innerHTML = ""
     document.querySelector('#review-stars').innerHTML = "<%= j render partial: 'reviews/stars', movie: @movie %>"
     document.querySelector('#reviews').innerHTML = "<%= j render partial: 'reviews/reviews', movie: @movie %>"
     document.querySelector('#flash-id').innerHTML = "<%= j render partial: 'layouts/flash' %>"
 <% else %>
-    document.querySelector('#form-error').innerHTML = "<%= j render 'shared/errors', object: @review %>"
+      document.querySelector('#review-container').innerHTML = "<%= j render  'shared/review_form', movie: @movie, review: @review %>"
 <% end %>
