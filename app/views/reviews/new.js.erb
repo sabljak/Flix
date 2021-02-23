@@ -1,2 +1,2 @@
 document.querySelector('#review-container').innerHTML = "<h1>Write a review for <%= @movie.title %></h1>"
-document.querySelector('#review-container').innerHTML += "<%= j render 'shared/review_form', movie: @movie, review: Review.new %>"
+document.querySelector('#review-container').innerHTML += "<%= j render  'shared/review_form', movie: @movie, review: Review.new %>"

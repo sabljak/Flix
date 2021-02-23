@@ -15,9 +15,8 @@
     <h2>
       <%= year_of(@movie) %> &bull; <%= @movie.rating %>
     </h2>
-    <div class="reviews">
-      <%= render 'shared/stars', percent: @movie.average_stars_as_percent %>
-      <%= link_to review_count(@movie), movie_reviews_path(@movie), id: "review-count" %>
+    <div id="review-stars" class="reviews">
+      <%= render partial: 'reviews/stars', movie: @movie %>
     </div>
     <p>
       <%= @movie.description %>
@@ -52,6 +51,9 @@
   </aside>
 </section>
 <div id="review-container">
+</div>
+<div id="reviews">
+  <%= render partial: 'reviews/reviews', movie: @movie %>
 </div>
 <% if current_user_admin? %>
   <section class="admin">
