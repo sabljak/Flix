@@ -4,7 +4,14 @@ class MoviesController < ApplicationController
   before_action :require_admin, except: [:index, :show]
 
   def index
-    @movies = Movie.released
+    @movies = Movie.released.paginate(page: params[:page], per_page: 5)
+
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: { entries: render_to_string(partial: "movies", formats: [:html]), pagination: view_context.will_paginate(@movies) }
+      }
+    end
   end
 
   def show
