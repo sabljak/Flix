@@ -1,9 +1,9 @@
-<div data-controller="movie">
-  <div data-movie-target="entries">
+<div data-controller="infinite-scroll">
+  <div data-infinite-scroll-target="entries">
     <%= render 'movies/movies', movies: @movies %>
   </div>
 
-  <div style="display: none" data-movie-target="pagination">
+  <div style="display: none" data-infinite-scroll-target="pagination">
     <%= will_paginate @movies %>
   </div>
 </div>

@@ -11,7 +11,7 @@ export default class extends Controller {
     async processEntries(entries) {
         for (const entry of entries) {
             if (entry.isIntersecting) {
-                await this.loadMovies();
+                await this.loadMore();
                 this.intersectionObserver.unobserve(entry.target);
                 if (entry.target !== this.entriesTarget.lastElementChild)
                     this.intersectionObserver.observe(this.entriesTarget.lastElementChild)
@@ -27,7 +27,7 @@ export default class extends Controller {
         this.intersectionObserver.unobserve(this.entriesTarget.lastElementChild)
     }
 
-    async loadMovies() {
+    async loadMore() {
         const next_page = this.paginationTarget.querySelector("a[rel='next']");
         if (next_page) {
             const res = await fetch(next_page.href, {
