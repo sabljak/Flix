@@ -1,8 +1,7 @@
-<div data-controller="movie" data-action="scroll@window->movie#scroll">
+<div data-controller="movie">
   <div data-movie-target="entries">
     <%= render 'movies/movies', movies: @movies %>
   </div>
-
 
   <div style="display: none" data-movie-target="pagination">
     <%= will_paginate @movies %>
