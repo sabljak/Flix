@@ -52,9 +52,19 @@
 </section>
 <div id="review-container">
 </div>
-<div id="reviews">
-  <%= render partial: 'reviews/reviews', movie: @movie %>
+
+<div id="reviews" data-controller="infinite-scroll">
+  <% if @reviews.any? %>
+    <h1>Reviews for <%= @movie.title %> </h1>
+    <ul class="reviews" data-infinite-scroll-target="entries">
+      <%= render partial: 'reviews/reviews', movie: @movie %>
+    </ul>
+  <% end %>
+  <div style="display: none" data-infinite-scroll-target="pagination">
+    <%= will_paginate @reviews %>
+  </div>
 </div>
+
 <% if current_user_admin? %>
   <section class="admin">
     <%= link_to "Edit", edit_movie_path(@movie), class: "button" %>
