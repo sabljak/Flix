@@ -16,9 +16,17 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @reviews = Movie.includes(:reviews).find(params[:id]).reviews.paginate(page: params[:page], per_page: 5)
     @fans = @movie.fans
     if Current.user
       @favorite = Current.user.favorites.find_by(movie_id: @movie.id)
+    end
+
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: { entries: render_to_string(partial: "reviews/reviews", movie: @movie, formats: [:html]), pagination: view_context.will_paginate(@reviews) }
+      }
     end
   end
 
