@@ -2,6 +2,17 @@ class ReviewsController < ApplicationController
   include MovieScoped
   before_action :require_signin
 
+  def index
+    @reviews = Movie.includes(:reviews).find(params[:movie_id]).reviews.paginate(page: params[:page], per_page: 5)
+
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: { entries: render_to_string(partial: "reviews", formats: [:html]), pagination: view_context.will_paginate(@reviews) }
+      }
+    end
+  end
+
   def create
     @review = @movie.reviews.new(review_params)
 
