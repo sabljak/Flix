@@ -11,7 +11,9 @@ export default class extends Controller {
     async processEntries(entries) {
         for (const entry of entries) {
             if (entry.isIntersecting) {
+                document.querySelector('#loading-spinner').style.display="block";
                 await this.loadMore();
+                document.querySelector('#loading-spinner').style.display="none";
                 this.intersectionObserver.unobserve(entry.target);
                 if (entry.target !== this.entriesTarget.lastElementChild)
                     this.intersectionObserver.observe(this.entriesTarget.lastElementChild)

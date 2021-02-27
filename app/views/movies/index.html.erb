@@ -2,7 +2,16 @@
   <div data-infinite-scroll-target="entries">
     <%= render 'movies/movies', movies: @movies %>
   </div>
-
+  <div class="lds-roller" id="loading-spinner">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
   <div style="display: none" data-infinite-scroll-target="pagination">
     <%= will_paginate @movies %>
   </div>
