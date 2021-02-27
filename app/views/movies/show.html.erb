@@ -59,6 +59,16 @@
     <ul class="reviews" data-infinite-scroll-target="entries">
       <%= render partial: 'reviews/reviews', movie: @movie %>
     </ul>
+    <div class="lds-roller" id="loading-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   <% end %>
   <div style="display: none" data-infinite-scroll-target="pagination">
     <%= will_paginate @reviews %>
