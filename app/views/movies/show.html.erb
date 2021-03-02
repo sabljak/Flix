@@ -56,7 +56,7 @@
 <div id="reviews" data-controller="infinite-scroll">
   <% if @reviews.any? %>
     <h1>Reviews for <%= @movie.title %> </h1>
-    <ul class="reviews" data-infinite-scroll-target="entries">
+    <ul class="reviews" id="review-list" data-infinite-scroll-target="entries">
       <%= render partial: 'reviews/reviews', movie: @movie %>
     </ul>
     <div class="lds-roller" id="loading-spinner">
