@@ -25,5 +25,9 @@
   <%= f.label :total_gross %>
   <%= f.number_field :total_gross %>
 
+  <div class="checkboxes">
+    <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name) %>
+  </div>
+
   <%= f.submit %>
 <% end %>
